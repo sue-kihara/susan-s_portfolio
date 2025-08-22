@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Datascience portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="shortcut icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSmvNIGrEMHsz2-FbrtPqONa51D9iHUYWz3A&s" type="image/x-icon">
+</head>
+<body>
+    <!-- Header / Navigation -->\>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="{{ url_for('index') }}" class="navbar-brand">My Portfolio</a>
+            <ul class="navbar-menu">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="hero">
+    <div class="hero-content">
+        <h1>Hello, I'm <span class="highlight">Susan Kihara</span></h1>
+        <p>A passionate <strong>Data Analyst</strong> turning raw data into meaningful insights and stories.</p>
+        <p>Browse through my portfolio to discover projects in <em>data cleaning, visualization, and analysis</em> using Python and modern analytics tools.</p>
+        <div class="hero-buttons">
+            <a href="#projects" class="btn">View My Projects</a>
+            <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-image">
+            <img src="https://www.uopeople.edu/wp-content/uploads/2022/06/Data-Science-Degree-How-To-Get-One-Hana-550x385.jpg" alt="Profile Picture">
+        </div>
+
+        <div  class="about-content">
+            <h2>About Me</h2>
+            <p>Hi, I'm a data enthusiast who loves to explore and analyze data. I enjoy finding patterns and insights that can help make better decisions. My goal is to use data to tell stories that are easy to understand.</p>
+            <p>I have skills in data analysis where I can clean and organize data, look for patterns, and explain the results clearly. I use tools like Excel and Python to make sense of the information, and I enjoy creating charts to show my findings. To me, data analysis is about turning numbers into a story that people can understand.</p>
+            <a href="#about" class="btn">Learn More</a>
+
+        </div>
+    </section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="projects-container">
+            <h2>My Projects</h2>
+            <div class="project-card">
+                <h3>Customer Purchase Behavior Analysis</h3>
+                <p>Analyzed customer purchase behavior data to identify patterns and trends in buying habits.</p>
+                <p><strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+                <a href="https://customerpurchasebehaviours-upeulbimsxvarvzsgcbzpt.streamlit.app/" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Heart Attack Patient Analysis</h3>
+                <p>Explored patient data to identify key factors influencing heart attack risks and outcomes.</p>
+                <p><strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+                <a href="https://heartattackpatients-analysis-ne7aaqztbnb2xbjfhyqmcm.streamlit.app/" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Netflix Movies & Shows Analysis</h3>
+                <p>Analyzed Netflix dataset to uncover trends in genres, release years, and content distribution across countries.</p>
+                <p><strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+                <a href="https://netflixmovie-and-show-analysis-55wvvqqgspuahcazqeuwdf.streamlit.app/" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <h3>Student Stress Level Analysis</h3>
+                <p>Examined student stress data to understand the impact of academic, social, and personal factors on stress levels.</p>
+                <p><strong>Tech:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+                <a href="https://stresslevelstudent-analysis-ahwbsc4oxxqqzbehv8adm3.streamlit.app/" class="btn">View Project</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- skills Section -->
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+            <li>Python</li>
+            <li>Pandas & NumPy</li>
+            <li>Data Cleaning & Preprocessing</li>
+            <li>Exploratory Data Analysis (EDA)</li>
+            <li>Data Visualization (Matplotlib, Seaborn)</li>
+            <li>Machine Learning (Scikit-learn basics)</li>
+            <li>Streamlit (Interactive Dashboards)</li>
+            <li>Git & GitHub</li>
+            <li>SQL (Basic Queries)</li>
+        </ul>  
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or would like to collaborate, feel free to reach out!</p>
+
+        <!-- Flash Messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div>
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <!-- Contact Details -->
+        <div style="max-width:600px;margin:20px auto;text-align:left;font-family:Arial,sans-serif;color:#333;line-height:1.6;">
+            <p style="margin:8px 0;font-size:1rem;"><strong>📞 Phone:</strong> +254 712 345 678</p>
+            <p style="margin:8px 0;font-size:1rem;"><strong>📧 Email:</strong> <a href="mailto:susankihara@gmail.com" style="color:#14CFB2;text-decoration:none;">susankihara@gmail.com</a></p>
+            <p style="margin:8px 0;font-size:1rem;"><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/yourusername" target="_blank" style="color:#14CFB2;text-decoration:none;">linkedin</a></p>
+            <p style="margin:8px 0;font-size:1rem;"><strong>💻 GitHub:</strong> <a href="https://github.com/sue-kihara" target="_blank" style="color:#14CFB2;text-decoration:none;">github</a></p>
+        </div>
+
+        <form action="{{ url_for('contact') }}" method="post" style="max-width:600px;margin:0 auto;display:grid;gap:1.5rem;">
+            <input type="text" name="name" placeholder="Your Name" required style="padding:1rem;border-radius:10px;border:1px solid #ccc;">
+            <input type="email" name="email" placeholder="Your Email" required style="padding:1rem;border-radius:10px;border:1px solid #ccc;">
+            <textarea name="message" placeholder="Your Message" required style="padding:1rem;border-radius:10px;border:1px solid #ccc;min-height:150px;"></textarea>
+            <button type="submit" class="btn" style="padding:1rem 2rem;border-radius:50px;background:#14CFB2;color:#fff;border:none;cursor:pointer;">Send Message</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 My Portfolio. All rights reserved.</p>
+    </footer>
+
+    
+    
+    
+</body>
+</html>
